@@ -1,28 +1,19 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map; //Array Listをインポート
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
 
 
-        Map<Integer, String> studentById = new HashMap<>();
-        studentById.put(1, "takahashi");//new　HashMapを追加
-        studentById.put(2, "yamamoto");
-        studentById.put(3, "nakakura");
-        studentById.put(4, "suzuki");//nullをさけるため4、suzukiを追加
-        System.out.println(studentById.get(2));
+        String[] hands = {"グー", "チョキ", "パー"};
+        String[] judges = {"勝ち", "あいこ", "負け"};
 
-        ArrayList<Integer> ids = new ArrayList<>();
-        ids.add(1);//数字を1、2、3、4に変化させた
-        ids.add(2);
-        ids.add(3);
-        ids.add(4);
+        Random rockScissorsPapers = new Random();
+        Random match = new Random();
+        String hand = hands[rockScissorsPapers.nextInt(3)];
+        System.out.println(hand);
+        String judge = judges[match.nextInt(3)];
+        System.out.println(judge);
 
-        for (int i = 1; ids.size() > i; i++) {
-            String name = studentById.get(ids.get(i));
-            System.out.println(name.toUpperCase());
-        }
 
     }
 }
